@@ -6,6 +6,8 @@ import br.fiap.assistencia_tecnica.web.dto.ClienteDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
@@ -13,11 +15,22 @@ public class ClienteController {
 
     public ClienteController(ClienteService service) {
         this.service = service;
+
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente salvar(@RequestBody ClienteDTO clienteDTO){
         return service.salvar(clienteDTO);
+    }
+
+    @GetMapping
+    public List<Cliente> listar(){
+        return service.listar();
+    }
+
+    @GetMapping("/{id}")
+    public Cliente buscaPorId(@PathVariable Long id){
+        return service.buscaPorId(id);
     }
 }

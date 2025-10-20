@@ -5,6 +5,8 @@ import br.fiap.assistencia_tecnica.repository.ClienteRepository;
 import br.fiap.assistencia_tecnica.web.dto.ClienteDTO;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClienteService {
     private ClienteRepository clienteRepository;
@@ -21,5 +23,14 @@ public class ClienteService {
         cliente.setTelefone(clienteDTO.getTelefone());
         return clienteRepository.save(cliente);
     }
+
+    public List<Cliente> listar() {
+        return clienteRepository.findAll();
+    }
+
+    public Cliente buscaPorId(Long id){
+        return clienteRepository.findById(id).orElse(null);
+    }
+
 
 }
