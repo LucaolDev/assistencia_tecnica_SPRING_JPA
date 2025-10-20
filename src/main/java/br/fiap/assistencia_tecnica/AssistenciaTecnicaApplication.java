@@ -20,9 +20,10 @@ public class AssistenciaTecnicaApplication {
 					System.err.println("Conexão inválida");
 				}
 			} catch (Exception e) {
-				System.err.println("Fralha ao conecta: " + e.getMessage());
+				System.err.println("Falha ao conectar: " + e.getMessage());
 			}
 		};
 	}
+
 
 }

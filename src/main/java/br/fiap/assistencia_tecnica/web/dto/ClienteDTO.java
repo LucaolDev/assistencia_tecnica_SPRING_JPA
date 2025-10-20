@@ -1,25 +1,10 @@
-package br.fiap.assistencia_tecnica;
+package br.fiap.assistencia_tecnica.web.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "JAVA_CLIENTE")
-public class Cliente {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name = "ID_CLIENTE")
+public class ClienteDTO {
     private Long id;
-
-    @Column(name = "NOME", nullable = true, length = 120)
     private String nome;
-
-    @Column(name = "EMAIL", nullable = false, length = 120)
     private String email;
-
-    @Column(name = "TELEFONE", nullable = false, length = 20)
     private String telefone;
-
-    @Column(name = "SENHA", nullable = false, length = 20)
     private String senha;
 
     public Long getId() {
