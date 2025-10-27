@@ -6,6 +6,7 @@ import br.fiap.assistencia_tecnica.repository.EquipamentoRepository;
 import br.fiap.assistencia_tecnica.web.dto.EquipamentoDTO;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -31,4 +32,5 @@ public class EquipamentoService {
         equipamento.setCliente(cliente);
         return equipamentoRepository.save(equipamento);
     }
+
 }
