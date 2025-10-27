@@ -1,5 +1,6 @@
 package br.fiap.assistencia_tecnica.web.dto;
 
+import br.fiap.assistencia_tecnica.domain.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,4 +18,8 @@ public class EquipamentoDTO {
     private String modelo;
     private String numeroSerie;
     private LocalDate dataCadastro;
+
+
 }
+
+
